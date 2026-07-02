@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Soulmate Travels – Your Dream Malaysia Holiday</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@1,500;1,600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --jungle:#1B4332;--jungle-mid:#2D6A4F;--jungle-light:#40916C;
+  --gold:#F59E0B;--gold-light:#FCD34D;
+  --coral:#F97316;--rose:#E11D48;
+  --teal:#0D9488;--teal-dark:#0F766E;
+  --sea:#0EA5E9;--sea-dark:#0369A1;
+  --cream:#FDFAF5;--white:#fff;
+  --dark:#0A1410;--text:#1C2B22;--muted:#6B7280;--border:#E5E7EB;
+  --brand-g:linear-gradient(135deg,#1B4332,#0D9488);
+  --gold-g:linear-gradient(135deg,#F59E0B,#F97316);
+  --hero-g:linear-gradient(160deg,#040d07 0%,#0d2318 45%,#081e2e 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(8,18,12,0.97);backdrop-filter:blur(16px);padding:0 2.5rem;display:flex;align-items:center;justify-content:space-between;height:70px;border-bottom:1px solid rgba(13,148,136,.25)}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo{width:46px;height:46px;background:var(--brand-g);border-radius:12px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;flex-shrink:0}
+.nav-logo svg{width:28px;height:28px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav-brand-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-brand-name{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;font-weight:700;letter-spacing:.01em}
+.nav-brand-name span{color:#5EEAD4}
+.nav-brand-tagline{font-size:.62rem;color:rgba(255,255,255,.4);letter-spacing:.18em;text-transform:uppercase}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:#5EEAD4}
+.nav-cta{background:var(--gold-g);color:#0A1410;font-weight:800;font-size:.8rem;letter-spacing:.05em;border:none;padding:.6rem 1.5rem;border-radius:50px;cursor:pointer;text-transform:uppercase;text-decoration:none;display:inline-block;box-shadow:0 2px 14px rgba(245,158,11,.4);transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(245,158,11,.55)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;background:var(--hero-g);overflow:hidden}
+.hero-orbs{position:absolute;inset:0;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.14;animation:orbFloat 14s ease-in-out infinite}
+.orb1{width:650px;height:650px;background:radial-gradient(circle,#0D9488,transparent);top:-180px;right:-120px}
+.orb2{width:500px;height:500px;background:radial-gradient(circle,#F59E0B,transparent);bottom:-130px;left:-80px;animation-delay:5s}
+.orb3{width:320px;height:320px;background:radial-gradient(circle,#F97316,transparent);top:50%;left:38%;animation-delay:9s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-38px) scale(1.06)}}
+.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1px);background-size:36px 36px}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:960px}
+.hero-logo-big{width:90px;height:90px;background:var(--brand-g);border-radius:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 1.6rem;box-shadow:0 8px 32px rgba(13,148,136,.35)}
+.hero-logo-big svg{width:50px;height:50px;fill:none;stroke:#fff;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.hero-kicker{display:inline-flex;align-items:center;gap:.6rem;background:rgba(13,148,136,.12);border:1px solid rgba(13,148,136,.3);color:#5EEAD4;font-size:.72rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;padding:.45rem 1.4rem;border-radius:50px;margin-bottom:1.6rem}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,7.5vw,5.8rem);color:#fff;line-height:1.05;margin-bottom:1.1rem;letter-spacing:-.02em}
+.hero-title em{font-style:italic;background:var(--gold-g);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-name{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1rem,2.2vw,1.5rem);color:rgba(255,255,255,.5);letter-spacing:.08em;margin-bottom:.6rem}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.65rem);color:rgba(255,255,255,.65);margin-bottom:2.5rem;line-height:1.65}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin-bottom:2.6rem}
+.hero-pill{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.8);font-size:.74rem;font-weight:500;padding:.38rem 1rem;border-radius:50px}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3.2rem}
+.btn-gold{background:var(--gold-g);color:#0A1410;font-weight:800;font-size:.95rem;letter-spacing:.04em;border:none;padding:1rem 2.5rem;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 22px rgba(245,158,11,.4)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(245,158,11,.55)}
+.btn-ghost{background:transparent;border:2px solid rgba(255,255,255,.28);color:#fff;font-weight:700;font-size:.95rem;padding:1rem 2.5rem;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s}
+.btn-ghost:hover{border-color:#5EEAD4;color:#5EEAD4}
+.hero-stats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.08);padding-top:2rem}
+.hstat{text-align:center}
+.hstat-num{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:var(--gold);line-height:1}
+.hstat-label{font-size:.68rem;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-top:.3rem}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:#fff;border-bottom:1px solid var(--border);padding:1rem 2rem;display:flex;align-items:center;justify-content:center;gap:2.2rem;flex-wrap:wrap}
+.titem{display:flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;color:var(--text)}
+.titem span{font-size:1rem}
+
+/* ── SHARED SECTION STYLES ── */
+.container{max-width:1240px;margin:0 auto}
+.eyebrow{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.32rem .95rem;border-radius:4px;margin-bottom:.8rem}
+.ey-teal{background:var(--brand-g);color:#fff}
+.ey-gold{background:var(--gold-g);color:#0A1410}
+.ey-sea{background:linear-gradient(135deg,#0EA5E9,#0369A1);color:#fff}
+.ey-light{background:rgba(255,255,255,.15);color:rgba(255,255,255,.9)}
+.sec-title{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,4vw,2.9rem);line-height:1.18;margin-bottom:.7rem}
+.sec-sub{font-size:.93rem;max-width:620px;line-height:1.72;margin-bottom:3rem}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── SUBHA INTRO ── */
+.intro-section{background:var(--dark);padding:5rem 1.5rem}
+.intro-inner{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1000px;margin:0 auto}
+.intro-left{}
+.intro-left .eyebrow{margin-bottom:1rem}
+.intro-title{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.2;margin-bottom:1rem}
+.intro-title em{font-style:italic;color:#5EEAD4}
+.intro-text{color:rgba(255,255,255,.55);font-size:.9rem;line-height:1.8;margin-bottom:1.5rem}
+.intro-names{display:flex;flex-direction:column;gap:.7rem}
+.iname-card{display:flex;align-items:center;gap:.9rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:.85rem 1.1rem}
+.iname-icon{font-size:1.5rem;flex-shrink:0}
+.iname-main{font-weight:700;color:#fff;font-size:.9rem}
+.iname-sub{font-size:.74rem;color:rgba(255,255,255,.4);margin-top:.1rem}
+.intro-right{display:flex;justify-content:center}
+.logo-showcase{width:240px;height:240px;background:var(--brand-g);border-radius:36px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;box-shadow:0 20px 60px rgba(13,148,136,.3)}
+.logo-showcase svg{width:80px;height:80px;fill:none;stroke:#fff;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.logo-showcase-name{font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;font-weight:700;text-align:center;line-height:1.2}
+.logo-showcase-name span{color:#5EEAD4}
+.logo-showcase-tag{font-size:.62rem;color:rgba(255,255,255,.5);letter-spacing:.18em;text-transform:uppercase}
+
+/* ── WHO WE SERVE ── */
+.audience-section{background:linear-gradient(180deg,var(--dark) 0%,#0a1a15 100%);padding:5rem 1.5rem}
+.aud-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+.aud-card{border-radius:16px;padding:1.3rem 1rem;text-align:center;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.04);transition:transform .25s,border-color .25s,background .25s}
+.aud-card:hover{transform:translateY(-4px);border-color:rgba(94,234,212,.3);background:rgba(13,148,136,.08)}
+.aud-emoji{font-size:2rem;display:block;margin-bottom:.55rem}
+.aud-name{color:#fff;font-weight:700;font-size:.85rem;margin-bottom:.2rem}
+.aud-sub{color:rgba(255,255,255,.38);font-size:.7rem;line-height:1.4}
+
+/* ── PACKAGES ── */
+.packages-section{background:var(--cream);padding:6rem 1.5rem}
+.pkg-filter{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem}
+.pf-btn{background:#fff;border:1.5px solid var(--border);color:var(--muted);font-size:.76rem;font-weight:600;padding:.4rem 1.05rem;border-radius:50px;cursor:pointer;transition:all .2s}
+.pf-btn:hover,.pf-btn.active{background:var(--jungle);border-color:var(--jungle);color:#fff}
+.pkgs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(355px,1fr));gap:2rem}
+.pkg{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 2px 22px rgba(0,0,0,.07);border:1px solid var(--border);transition:transform .3s,box-shadow .3s;display:flex;flex-direction:column}
+.pkg:hover{transform:translateY(-8px);box-shadow:0 18px 50px rgba(0,0,0,.13)}
+.pkg-head{padding:1.6rem 1.6rem 1.2rem;position:relative;overflow:hidden}
+.pkg-head::after{content:'';position:absolute;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.06);bottom:-55px;right:-45px}
+.pkg.std   .pkg-head{background:linear-gradient(135deg,#1B4332,#0D9488)}
+.pkg.prem  .pkg-head{background:linear-gradient(135deg,#7C2D12,#C2410C)}
+.pkg.isle  .pkg-head{background:linear-gradient(135deg,#075985,#0EA5E9)}
+.pkg.honey .pkg-head{background:linear-gradient(135deg,#881337,#E11D48)}
+.pkg.corp  .pkg-head{background:linear-gradient(135deg,#1e1b4b,#4338CA)}
+.pkg.edu   .pkg-head{background:linear-gradient(135deg,#14532D,#15803D)}
+.pkg-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem}
+.ptag{font-size:.63rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:.2rem .6rem;border-radius:50px}
+.pt-d{background:rgba(245,158,11,.25);color:#FCD34D}
+.pt-t{background:rgba(94,234,212,.2);color:#99F6E4}
+.pt-h{background:rgba(249,115,22,.3);color:#FDBA74}
+.pt-n{background:rgba(167,139,250,.3);color:#DDD6FE}
+.pkg-name{font-family:'Playfair Display',serif;color:#fff;font-size:1.3rem;font-weight:700;margin-bottom:.28rem;line-height:1.2}
+.pkg-tagline{color:rgba(255,255,255,.6);font-size:.78rem;font-style:italic}
+.pkg-body{padding:1.6rem;flex:1;display:flex;flex-direction:column}
+.price-row{display:flex;align-items:flex-end;gap:.55rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.price-from{font-size:.7rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;padding-bottom:.28rem}
+.price-amt{font-size:2.2rem;font-weight:900;line-height:1}
+.pkg.std   .price-amt,.pkg.prem .price-amt,.pkg.isle .price-amt,.pkg.edu .price-amt{color:var(--jungle)}
+.pkg.honey .price-amt{color:#BE185D}
+.pkg.corp  .price-amt{color:#4338CA}
+.price-unit{font-size:.78rem;color:var(--muted);padding-bottom:.28rem}
+.price-badge{font-size:.7rem;font-weight:800;padding:.26rem .72rem;border-radius:50px;align-self:center}
+.pb-g{background:#DCFCE7;color:#15803D}
+.pb-p{background:#FCE7F3;color:#9D174D}
+.pb-b{background:#DBEAFE;color:#1E40AF}
+.pb-o{background:#FFF7ED;color:#C2410C}
+.includes{list-style:none;margin-bottom:1.25rem;flex:1}
+.includes li{display:flex;align-items:flex-start;gap:.55rem;font-size:.82rem;color:var(--text);padding:.28rem 0;border-bottom:1px solid #F3F4F6;line-height:1.4}
+.includes li:last-child{border-bottom:none}
+.tick{font-weight:900;font-size:.85rem;flex-shrink:0;margin-top:1px}
+.pkg.std   .tick,.pkg.prem .tick,.pkg.isle .tick,.pkg.edu .tick{color:var(--teal)}
+.pkg.honey .tick{color:#E11D48}
+.pkg.corp  .tick{color:#4338CA}
+.aud-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1.15rem}
+.at{font-size:.68rem;background:#F0FDFA;color:#0F766E;font-weight:600;padding:.2rem .62rem;border-radius:50px}
+.pkg-cta{width:100%;font-weight:800;font-size:.83rem;letter-spacing:.05em;border:none;padding:.88rem;border-radius:14px;cursor:pointer;transition:opacity .2s,transform .2s;text-transform:uppercase;color:#fff;margin-top:auto}
+.pkg-cta:hover{opacity:.88;transform:translateY(-1px)}
+.pkg.std   .pkg-cta{background:linear-gradient(135deg,#1B4332,#0D9488)}
+.pkg.prem  .pkg-cta{background:linear-gradient(135deg,#7C2D12,#C2410C)}
+.pkg.isle  .pkg-cta{background:linear-gradient(135deg,#075985,#0EA5E9)}
+.pkg.honey .pkg-cta{background:linear-gradient(135deg,#881337,#E11D48)}
+.pkg.corp  .pkg-cta{background:linear-gradient(135deg,#1e1b4b,#4338CA)}
+.pkg.edu   .pkg-cta{background:linear-gradient(135deg,#14532D,#15803D)}
+
+/* ── ISLANDS ── */
+.islands-section{background:linear-gradient(180deg,#060f0a 0%,#081d2d 100%);padding:6rem 1.5rem}
+.islands-section .sec-title{color:#fff}
+.islands-section .sec-sub{color:rgba(255,255,255,.42)}
+.isl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1.2rem}
+.isl{border-radius:20px;padding:1.6rem 1.3rem;text-align:center;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.isl::before{content:'';position:absolute;bottom:-28px;right:-28px;width:110px;height:110px;border-radius:50%;background:rgba(255,255,255,.06)}
+.isl:nth-child(1){background:linear-gradient(145deg,#064E3B,#065F46)}
+.isl:nth-child(2){background:linear-gradient(145deg,#0C4A6E,#075985)}
+.isl:nth-child(3){background:linear-gradient(145deg,#7C2D12,#9A3412)}
+.isl:nth-child(4){background:linear-gradient(145deg,#3B0764,#6D28D9)}
+.isl:nth-child(5){background:linear-gradient(145deg,#134E4A,#0F766E)}
+.isl:nth-child(6){background:linear-gradient(145deg,#713F12,#B45309)}
+.isl:hover{transform:translateY(-6px);box-shadow:0 14px 38px rgba(0,0,0,.45)}
+.isl-emoji{font-size:2.8rem;display:block;margin-bottom:.65rem}
+.isl-badge{font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.15);color:rgba(255,255,255,.85);padding:.2rem .7rem;border-radius:50px;display:inline-block;margin-bottom:.5rem}
+.isl-name{color:#fff;font-family:'Playfair Display',serif;font-size:1.06rem;font-weight:700;margin-bottom:.4rem}
+.isl-desc{color:rgba(255,255,255,.62);font-size:.75rem;line-height:1.55;margin-bottom:.85rem}
+.isl-from{font-size:.8rem;font-weight:800;color:var(--gold-light);background:rgba(0,0,0,.25);padding:.28rem .8rem;border-radius:50px;display:inline-block}
+
+/* ── ADD-ONS ── */
+.addons-section{background:#fff;padding:6rem 1.5rem}
+.cat-title{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--dark);margin-bottom:1.3rem;display:flex;align-items:center;gap:.9rem}
+.cat-title::after{content:'';flex:1;height:1px;background:var(--border)}
+.addons-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1.2rem;margin-bottom:3.5rem}
+.adn{border-radius:18px;padding:1.5rem;border:2px solid;transition:transform .25s,box-shadow .25s}
+.adn:hover{transform:translateY(-4px);box-shadow:0 8px 26px rgba(0,0,0,.1)}
+.adn.photo{border-color:#FDE68A;background:linear-gradient(135deg,#FFFBEB,#FEF9E7)}
+.adn.honey{border-color:#FBCFE8;background:linear-gradient(135deg,#FFF1F2,#FDE8EF)}
+.adn.water{border-color:#A5F3FC;background:linear-gradient(135deg,#F0FDFF,#ECFEFF)}
+.adn-icon{font-size:2.2rem;margin-bottom:.65rem;display:block}
+.adn-name{font-family:'Playfair Display',serif;font-size:1.06rem;font-weight:700;margin-bottom:.38rem}
+.adn.photo .adn-name{color:#92400E}
+.adn.honey .adn-name{color:#9D174D}
+.adn.water .adn-name{color:#0E7490}
+.adn-desc{font-size:.8rem;color:var(--muted);line-height:1.55;margin-bottom:1rem}
+.adn-footer{display:flex;align-items:center;justify-content:space-between;gap:.5rem}
+.adn-price{font-size:1.2rem;font-weight:900}
+.adn.photo .adn-price{color:#92400E}
+.adn.honey .adn-price{color:#BE185D}
+.adn.water .adn-price{color:#0E7490}
+.adn-per{font-size:.7rem;color:var(--muted)}
+.adn-btn{font-size:.74rem;font-weight:800;border:none;padding:.38rem .95rem;border-radius:50px;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.adn.photo .adn-btn{background:#FEF3C7;color:#92400E}
+.adn.honey .adn-btn{background:#FCE7F3;color:#9D174D}
+.adn.water .adn-btn{background:#CFFAFE;color:#0E7490}
+.adn-btn:hover{opacity:.75}
+
+/* ── TESTIMONIALS ── */
+.testi-section{background:var(--cream);padding:5rem 1.5rem}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.testi{background:#fff;border-radius:20px;padding:1.8rem;border:1px solid var(--border);box-shadow:0 2px 16px rgba(0,0,0,.06)}
+.testi-stars{color:var(--gold);font-size:.95rem;margin-bottom:.75rem;letter-spacing:.1em}
+.testi-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.04rem;color:var(--text);line-height:1.62;margin-bottom:1rem}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.tav{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.tname{font-weight:700;font-size:.84rem;color:var(--dark)}
+.tdetail{font-size:.73rem;color:var(--muted)}
+
+/* ── WHY US ── */
+.why-section{background:linear-gradient(135deg,#0D1F16 0%,#0a1f2e 100%);padding:5rem 1.5rem}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:1.2rem}
+.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.5rem;transition:transform .25s,background .25s}
+.why-card:hover{transform:translateY(-4px);background:rgba(255,255,255,.1)}
+.why-icon{font-size:2rem;display:block;margin-bottom:.65rem}
+.why-title{color:#fff;font-weight:700;font-size:.9rem;margin-bottom:.38rem}
+.why-desc{color:rgba(255,255,255,.48);font-size:.77rem;line-height:1.55}
+
+/* ── CONTACT ── */
+.contact-section{background:var(--dark);padding:6rem 1.5rem}
+.contact-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:3.5rem;align-items:start;max-width:1050px;margin:0 auto}
+.contact-left h3{font-family:'Playfair Display',serif;color:#fff;font-size:2.1rem;margin-bottom:.4rem;line-height:1.2}
+.contact-left h3 em{font-style:italic;color:#5EEAD4}
+.contact-by{font-size:.78rem;color:rgba(255,255,255,.35);margin-bottom:1.2rem;font-style:italic}
+.contact-left p{color:rgba(255,255,255,.42);font-size:.87rem;line-height:1.75;margin-bottom:2rem}
+.clist{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem}
+.citem{display:flex;align-items:center;gap:.9rem}
+.citem-icon{width:42px;height:42px;background:rgba(13,148,136,.12);border:1px solid rgba(13,148,136,.25);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.citem-text{font-size:.87rem;color:rgba(255,255,255,.72);font-weight:500}
+.citem-text a{color:#5EEAD4;text-decoration:none}
+.citem-text a:hover{text-decoration:underline}
+.social-row{display:flex;gap:.8rem;align-items:center}
+.social-label{font-size:.7rem;color:rgba(255,255,255,.35);letter-spacing:.12em;text-transform:uppercase}
+.social-btn{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:50px;padding:.45rem 1rem;text-decoration:none;transition:all .2s}
+.social-btn:hover{background:rgba(255,255,255,.13);border-color:rgba(255,255,255,.25)}
+.social-btn svg{width:16px;height:16px}
+.social-btn span{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.75)}
+.cform{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:24px;padding:2.2rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{margin-bottom:1.05rem}
+.fg label{display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.42rem}
+.fg input,.fg select,.fg textarea{width:100%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.11);border-radius:10px;color:#fff;font-family:'Inter',sans-serif;font-size:.86rem;padding:.7rem .95rem;outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.2)}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#5EEAD4}
+.fg select option{background:#1a2a1f}
+.fg textarea{resize:vertical;min-height:88px}
+.fsubmit{width:100%;background:var(--gold-g);color:#0A1410;font-weight:900;font-size:.9rem;letter-spacing:.08em;border:none;padding:1.05rem;border-radius:12px;cursor:pointer;text-transform:uppercase;transition:transform .2s,box-shadow .2s;margin-top:.3rem}
+.fsubmit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,158,11,.45)}
+
+/* ── FOOTER ── */
+footer{background:#050c07;padding:3.5rem 1.5rem 2rem;border-top:1px solid rgba(255,255,255,.06)}
+.footer-inner{max-width:1240px;margin:0 auto}
+.ftop{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.fbrand{display:flex;align-items:flex-start;gap:12px;margin-bottom:1rem}
+.fbrand-logo{width:46px;height:46px;background:var(--brand-g);border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.fbrand-logo svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.fbrand-name{font-family:'Playfair Display',serif;font-size:1.3rem;color:#fff;font-weight:700;line-height:1.1}
+.fbrand-name span{color:#5EEAD4}
+.fbrand-sub{font-size:.6rem;color:rgba(255,255,255,.3);letter-spacing:.15em;text-transform:uppercase;margin-top:.1rem}
+.fbrand-desc{color:rgba(255,255,255,.3);font-size:.78rem;line-height:1.65;max-width:270px;margin-bottom:1.2rem}
+.footer-social{display:flex;gap:.6rem}
+.footer-social a{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:all .2s}
+.footer-social a svg{width:16px;height:16px}
+.footer-social a:hover{background:var(--teal)}
+.fcol-title{color:#5EEAD4;font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:1rem}
+.flinks{list-style:none;display:flex;flex-direction:column;gap:.48rem}
+.flinks a{color:rgba(255,255,255,.38);text-decoration:none;font-size:.8rem;transition:color .2s}
+.flinks a:hover{color:#5EEAD4}
+.fbottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.fcopy{color:rgba(255,255,255,.2);font-size:.73rem}
+.fcopy a{color:rgba(255,255,255,.35);text-decoration:none}
+
+/* ── WHATSAPP ── */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;background:#25D366;border-radius:50px;padding:.8rem 1.5rem;display:flex;align-items:center;gap:.65rem;box-shadow:0 4px 22px rgba(37,211,102,.5);text-decoration:none;color:#fff;font-weight:800;font-size:.88rem;animation:waPulse 3s ease-in-out infinite}
+@keyframes waPulse{0%,100%{box-shadow:0 4px 22px rgba(37,211,102,.4)}50%{box-shadow:0 6px 40px rgba(37,211,102,.85)}}
+.wa-float svg{width:20px;height:20px;fill:#fff}
+
+@media(max-width:960px){nav .nav-links{display:none}}
+@media(max-width:768px){.contact-wrap,.intro-inner{grid-template-columns:1fr}.ftop{grid-template-columns:1fr 1fr}.frow{grid-template-columns:1fr}.pkgs-grid{grid-template-columns:1fr}}
+@media(max-width:480px){.ftop{grid-template-columns:1fr}.hero-stats{gap:1.5rem}.logo-showcase{width:180px;height:180px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#home">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 13.5 4 8.5a8 8 0 0 1 16 0C20 13.5 12 21 12 21z"/><path d="M9 9c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/><path d="M8 17c-1.5.8-2.5 1.6-2.5 2.5C5.5 20.3 8.5 21 12 21s6.5-.7 6.5-1.5c0-.9-1-1.7-2.5-2.5"/></svg>
+    </div>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">Soulmate <span>Travels</span></div>
+      <div class="nav-brand-tagline">Malaysia Holiday Specialists</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#islands">Islands</a></li>
+    <li><a href="#addons">Experiences</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="nav-cta" href="#contact">Book Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-orbs"><div class="orb orb1"></div><div class="orb orb2"></div><div class="orb orb3"></div></div>
+  <div class="hero-dots"></div>
+  <div class="hero-content">
+    <div class="hero-logo-big">
+      <svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 13.5 4 8.5a8 8 0 0 1 16 0C20 13.5 12 21 12 21z"/><path d="M9 9c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/><path d="M8 17c-1.5.8-2.5 1.6-2.5 2.5C5.5 20.3 8.5 21 12 21s6.5-.7 6.5-1.5c0-.9-1-1.7-2.5-2.5"/></svg>
+    </div>
+    <div class="hero-kicker">🌴 India's Favourite Malaysia Holiday Specialists</div>
+    <h1 class="hero-title">Your Perfect<br/><em>Malaysia Holiday</em><br/>Awaits You</h1>
+    <p class="hero-name">— by Subha &amp; Team, Soulmate Travels —</p>
+    <p class="hero-sub">From the glittering towers of Kuala Lumpur to the crystal-clear<br/>waters of paradise islands — we make it effortless &amp; unforgettable</p>
+    <div class="hero-pills">
+      <span class="hero-pill">✈ Flights Included</span>
+      <span class="hero-pill">🏨 Hotel Included</span>
+      <span class="hero-pill">🍛 Indian-Friendly Food</span>
+      <span class="hero-pill">📸 Drone &amp; Couple Shoots</span>
+      <span class="hero-pill">🤿 Snorkelling &amp; Water Sports</span>
+      <span class="hero-pill">💍 Honeymoon Packages</span>
+      <span class="hero-pill">🏝️ 6 Paradise Islands</span>
+      <span class="hero-pill">💳 Pay in ₹ INR</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#packages" class="btn-gold">Explore All Packages →</a>
+      <a href="#contact" class="btn-ghost">Get Free Quote</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><div class="hstat-num">5,000+</div><div class="hstat-label">Happy Travellers</div></div>
+      <div class="hstat"><div class="hstat-num">6</div><div class="hstat-label">Island Destinations</div></div>
+      <div class="hstat"><div class="hstat-num">12+</div><div class="hstat-label">Package Options</div></div>
+      <div class="hstat"><div class="hstat-num">⭐ 5.0</div><div class="hstat-label">Average Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="titem"><span>✈</span> Flights Included</div>
+  <div class="titem"><span>🏨</span> 3★ to 5★ Hotels</div>
+  <div class="titem"><span>🍛</span> Veg &amp; Halal Meals</div>
+  <div class="titem"><span>🗣️</span> Hindi &amp; Tamil Support</div>
+  <div class="titem"><span>📋</span> Free Visa Assistance</div>
+  <div class="titem"><span>🔒</span> Safe &amp; Insured</div>
+  <div class="titem"><span>💳</span> Pay in INR · UPI OK</div>
+</div>
+
+<!-- INTRO / ABOUT SUBHA -->
+<section class="intro-section" id="about">
+  <div class="intro-inner container">
+    <div class="intro-left reveal">
+      <div class="eyebrow ey-teal">Meet Your Travel Family</div>
+      <h2 class="intro-title">We're Soulmates —<br/><em>We Plan Your Soulmate Trips</em></h2>
+      <p class="intro-text">Hi! I'm <strong style="color:#fff">Subha</strong> and together with my family we've built Soulmate Travels with one simple dream — to give every Indian traveller the most magical, stress-free Malaysia holiday they've ever had. From visa to vaycay, we handle everything so you just enjoy.</p>
+      <div class="intro-names">
+        <div class="iname-card">
+          <div class="iname-icon">👩</div>
+          <div><div class="iname-main">Subha</div><div class="iname-sub">Founder &amp; Your Personal Travel Planner</div></div>
+        </div>
+        <div class="iname-card">
+          <div class="iname-icon">👨</div>
+          <div><div class="iname-main">Smruti</div><div class="iname-sub">Co-Founder &amp; Operations Head</div></div>
+        </div>
+        <div class="iname-card">
+          <div class="iname-icon">👧</div>
+          <div><div class="iname-main">Saskia</div><div class="iname-sub">Our Little Inspiration ✨</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="intro-right reveal">
+      <div class="logo-showcase">
+        <svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 13.5 4 8.5a8 8 0 0 1 16 0C20 13.5 12 21 12 21z"/><path d="M9 9c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/><path d="M8 17c-1.5.8-2.5 1.6-2.5 2.5C5.5 20.3 8.5 21 12 21s6.5-.7 6.5-1.5c0-.9-1-1.7-2.5-2.5"/></svg>
+        <div class="logo-showcase-name">Soulmate<br/><span>Travels</span></div>
+        <div class="logo-showcase-tag">Malaysia Specialists</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE SERVE -->
+<section class="audience-section">
+  <div class="container">
+    <div class="eyebrow ey-gold">We Welcome Everyone</div>
+    <h2 class="sec-title" style="color:#fff">A Holiday for <span style="color:#5EEAD4">Every Indian Traveller</span></h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.42)">Whether you're a solo explorer, a newlywed couple, a family, a school group or a corporate team — we have the perfect Malaysia package crafted just for you.</p>
+    <div class="aud-grid">
+      <div class="aud-card reveal"><span class="aud-emoji">🧍</span><div class="aud-name">Solo Travellers</div><div class="aud-sub">Explore freely, meet the world</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">💑</span><div class="aud-name">Couples</div><div class="aud-sub">Romance in paradise</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">💍</span><div class="aud-name">Honeymooners</div><div class="aud-sub">Unforgettable first chapter</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">👨‍👩‍👧</span><div class="aud-name">Families</div><div class="aud-sub">Memories for a lifetime</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">👥</span><div class="aud-name">Friend Groups</div><div class="aud-sub">Trip of a lifetime</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">🏢</span><div class="aud-name">Corporate Teams</div><div class="aud-sub">Reward &amp; inspire</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">🎓</span><div class="aud-name">Students</div><div class="aud-sub">Explore, learn &amp; bond</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">🏫</span><div class="aud-name">School Groups</div><div class="aud-sub">Educational adventures</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">🏦</span><div class="aud-name">Bank Staff</div><div class="aud-sub">Well-earned getaways</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">🏛️</span><div class="aud-name">University Tours</div><div class="aud-sub">Academic exposure trips</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">👔</span><div class="aud-name">Company Staff</div><div class="aud-sub">Incentive &amp; team tours</div></div>
+      <div class="aud-card reveal"><span class="aud-emoji">🌍</span><div class="aud-name">Large Groups</div><div class="aud-sub">50+ pax specialists</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="container">
+    <div class="eyebrow ey-teal">Tour Packages · All Prices in ₹ INR</div>
+    <h2 class="sec-title">Find Your Perfect <em style="font-style:italic;color:var(--teal)">Malaysia Package</em></h2>
+    <p class="sec-sub">Every package includes return air tickets, hotel, transfers &amp; guided sightseeing. Fully customisable. All priced in Indian Rupees with no hidden charges.</p>
+    <div class="pkg-filter">
+      <button class="pf-btn active">All Packages</button>
+      <button class="pf-btn">3–5 Days</button>
+      <button class="pf-btn">7 Days</button>
+      <button class="pf-btn">10–12 Days</button>
+      <button class="pf-btn">💍 Honeymoon</button>
+      <button class="pf-btn">🎓 Students</button>
+      <button class="pf-btn">🏢 Corporate</button>
+    </div>
+    <div class="pkgs-grid">
+
+      <div class="pkg std reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">3 Days / 2 Nights</span><span class="ptag pt-t">City Escape</span></div>
+          <div class="pkg-name">Kuala Lumpur Flash Trip</div>
+          <div class="pkg-tagline">Twin towers, temples &amp; city magic in a weekend</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹28,999</span><span class="price-unit">/ person</span><span class="price-badge pb-g">All Inclusive</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Air Tickets from your city</li>
+            <li><span class="tick">✓</span> 2 Nights 3★ KL City Hotel (twin sharing)</li>
+            <li><span class="tick">✓</span> Petronas Twin Towers + Sky Bridge visit</li>
+            <li><span class="tick">✓</span> Batu Caves + Chinatown + KL Tower</li>
+            <li><span class="tick">✓</span> Airport–hotel transfers (AC vehicle)</li>
+            <li><span class="tick">✓</span> Daily breakfast · halal &amp; veg options</li>
+            <li><span class="tick">✓</span> Indian-speaking guide + 24/7 support</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Solo</span><span class="at">Couple</span><span class="at">Corporate</span><span class="at">Students</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg std reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">5 Days / 4 Nights</span><span class="ptag pt-h">⭐ Most Popular</span></div>
+          <div class="pkg-name">Malaysia Classic</div>
+          <div class="pkg-tagline">KL + Genting + Sunway Lagoon + Putrajaya</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹46,999</span><span class="price-unit">/ person</span><span class="price-badge pb-g">Best Seller</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Flights from all major Indian cities</li>
+            <li><span class="tick">✓</span> 4 Nights hotel (2N KL 4★ + 2N Genting)</li>
+            <li><span class="tick">✓</span> Genting SkyAvenue + Theme Park full day</li>
+            <li><span class="tick">✓</span> Putrajaya + KLCC + Merdeka Square tour</li>
+            <li><span class="tick">✓</span> Sunway Lagoon Water Park (full day)</li>
+            <li><span class="tick">✓</span> Daily breakfast + 2 Indian buffet dinners</li>
+            <li><span class="tick">✓</span> AC coach + all entry tickets + insurance</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Family</span><span class="at">Group</span><span class="at">Bank Staff</span><span class="at">Company</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg isle reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">5 Days / 4 Nights</span><span class="ptag pt-t">Island Escape</span></div>
+          <div class="pkg-name">KL + Langkawi Bliss</div>
+          <div class="pkg-tagline">City glamour meets duty-free island paradise</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹54,999</span><span class="price-unit">/ person</span><span class="price-badge pb-b">Island Package</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Flights + KL–Langkawi ferry</li>
+            <li><span class="tick">✓</span> 2N KL 4★ + 2N Langkawi beach resort</li>
+            <li><span class="tick">✓</span> Cable Car + Eagle Square + Sky Bridge</li>
+            <li><span class="tick">✓</span> Island hopping boat tour (3 islands)</li>
+            <li><span class="tick">✓</span> Snorkelling at Pulau Payar Marine Park</li>
+            <li><span class="tick">✓</span> Daily breakfast + 1 seafood dinner</li>
+            <li><span class="tick">✓</span> Duty-free shopping guidance</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Couple</span><span class="at">Family</span><span class="at">Honeymoon</span><span class="at">Group</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg prem reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">7 Days / 6 Nights</span><span class="ptag pt-h">🏆 Best Value</span></div>
+          <div class="pkg-name">Complete Malaysia Explorer</div>
+          <div class="pkg-tagline">KL + Penang + Langkawi — the definitive journey</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹72,999</span><span class="price-unit">/ person</span><span class="price-badge pb-o">3 Cities</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return International Flights</li>
+            <li><span class="tick">✓</span> 2N KL 4★ + 2N Penang Boutique + 2N Langkawi Resort</li>
+            <li><span class="tick">✓</span> Petronas Towers, Batu Caves, Genting</li>
+            <li><span class="tick">✓</span> Penang UNESCO Heritage Walk + Penang Hill</li>
+            <li><span class="tick">✓</span> Langkawi island hopping + snorkelling + cable car</li>
+            <li><span class="tick">✓</span> Daily breakfast + 3 curated dinners</li>
+            <li><span class="tick">✓</span> All transfers, ferries &amp; entries · Indian guide</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Family</span><span class="at">Group</span><span class="at">Corporate</span><span class="at">University</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg isle reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">7 Days / 6 Nights</span><span class="ptag pt-t">🏝️ Island Focus</span><span class="ptag pt-h">Top Seller</span></div>
+          <div class="pkg-name">KL + Tioman Island Dream</div>
+          <div class="pkg-tagline">Rainforest, coral reefs &amp; crystal-clear waters</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹78,999</span><span class="price-unit">/ person</span><span class="price-badge pb-b">Island Special</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Flights + Mersing ferry to Tioman</li>
+            <li><span class="tick">✓</span> 2N KL 4★ + 4N Tioman beachfront chalet</li>
+            <li><span class="tick">✓</span> Snorkelling + glass-bottom boat + jungle trek</li>
+            <li><span class="tick">✓</span> KL: Petronas Towers + Batu Caves + KLCC</li>
+            <li><span class="tick">✓</span> Daily breakfast + 4 island seafood dinners</li>
+            <li><span class="tick">✓</span> Full snorkel gear + marine briefing</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Couple</span><span class="at">Solo</span><span class="at">Group</span><span class="at">Adventure Lovers</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg honey reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">7 Days / 6 Nights</span><span class="ptag pt-n">💍 Honeymoon Special</span></div>
+          <div class="pkg-name">Romantic Malaysia Honeymoon</div>
+          <div class="pkg-tagline">Crafted with love for newlyweds &amp; anniversaries</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹1,09,999</span><span class="price-unit">/ couple</span><span class="price-badge pb-p">Couple Package</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Couple Flights (premium economy option)</li>
+            <li><span class="tick">✓</span> 2N KL Boutique Hotel + 4N Langkawi Sea-View Villa</li>
+            <li><span class="tick">✓</span> Rose petal room decoration + welcome hamper</li>
+            <li><span class="tick">✓</span> Private candlelit beach dinner (live music)</li>
+            <li><span class="tick">✓</span> 90-min couples spa &amp; aromatherapy massage</li>
+            <li><span class="tick">✓</span> Private island boat tour (exclusively for 2)</li>
+            <li><span class="tick">✓</span> Sunset cruise + couple snorkelling</li>
+            <li><span class="tick">✓</span> Professional couple photoshoot (80 photos)</li>
+            <li><span class="tick">✓</span> Honeymoon certificate + personalised itinerary</li>
+          </ul>
+          <div class="aud-tags"><span class="at" style="background:#FCE7F3;color:#9D174D">Newlyweds</span><span class="at" style="background:#FCE7F3;color:#9D174D">Anniversary</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Honeymoon →</button>
+        </div>
+      </div>
+
+      <div class="pkg prem reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">10 Days / 9 Nights</span><span class="ptag pt-t">Grand Tour</span></div>
+          <div class="pkg-name">Malaysia Grand Explorer</div>
+          <div class="pkg-tagline">KL + Cameron + Penang + Perhentian + Langkawi</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹1,04,999</span><span class="price-unit">/ person</span><span class="price-badge pb-o">5 Destinations</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Flights · premium economy option</li>
+            <li><span class="tick">✓</span> 2N KL + 1N Cameron + 2N Penang + 2N Perhentian + 2N Langkawi</li>
+            <li><span class="tick">✓</span> Cameron tea plantation + strawberry farm</li>
+            <li><span class="tick">✓</span> Perhentian Islands — sea turtles &amp; snorkelling</li>
+            <li><span class="tick">✓</span> Langkawi cable car + duty-free + sunset cruise</li>
+            <li><span class="tick">✓</span> Daily breakfast + 5 special dinners · Indian guide</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Family</span><span class="at">Group</span><span class="at">Bank Staff</span><span class="at">Corporate</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book This Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg prem reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">12 Days / 11 Nights</span><span class="ptag pt-h">🏆 Ultimate</span></div>
+          <div class="pkg-name">Ultimate Malaysia — All Islands</div>
+          <div class="pkg-tagline">The complete experience — nothing left out</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹1,39,999</span><span class="price-unit">/ person</span><span class="price-badge pb-o">All-Inclusive</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Return Flights · business class option available</li>
+            <li><span class="tick">✓</span> KL + Genting + Cameron + Penang + Redang + Langkawi</li>
+            <li><span class="tick">✓</span> Redang Island — snorkelling + intro dive</li>
+            <li><span class="tick">✓</span> Drone + couple + family group photoshoot combo</li>
+            <li><span class="tick">✓</span> Full board: breakfast + lunch + dinner all 12 days</li>
+            <li><span class="tick">✓</span> Personal Indian travel manager + travel insurance</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Family</span><span class="at">Large Group</span><span class="at">Corporate Retreat</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book Ultimate Package →</button>
+        </div>
+      </div>
+
+      <div class="pkg edu reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">5 Days / 4 Nights</span><span class="ptag pt-t">Educational Group</span></div>
+          <div class="pkg-name">Student &amp; School Group Tour</div>
+          <div class="pkg-tagline">Learn, explore &amp; create unforgettable memories</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹34,999</span><span class="price-unit">/ student</span><span class="price-badge pb-g">Min 20 Pax</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Group air tickets at discounted group fare</li>
+            <li><span class="tick">✓</span> 4 Nights 3★ hotel (triple/quad sharing)</li>
+            <li><span class="tick">✓</span> Petronas Towers, Aquaria KLCC, Science Museum</li>
+            <li><span class="tick">✓</span> Genting Highlands theme park + Batu Caves</li>
+            <li><span class="tick">✓</span> Daily breakfast + lunch · veg &amp; non-veg</li>
+            <li><span class="tick">✓</span> 1 teacher FREE per 15 students</li>
+          </ul>
+          <div class="aud-tags"><span class="at">School Groups</span><span class="at">University</span><span class="at">Colleges</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Enquire Group Rate →</button>
+        </div>
+      </div>
+
+      <div class="pkg corp reveal">
+        <div class="pkg-head">
+          <div class="pkg-tags"><span class="ptag pt-d">4 Days / 3 Nights</span><span class="ptag pt-n">MICE / Corporate</span></div>
+          <div class="pkg-name">Corporate Incentive Tour</div>
+          <div class="pkg-tagline">Reward your team — conference, leisure &amp; celebration</div>
+        </div>
+        <div class="pkg-body">
+          <div class="price-row"><span class="price-from">Starting From</span><span class="price-amt">₹58,999</span><span class="price-unit">/ person</span><span class="price-badge pb-b">Min 15 Pax</span></div>
+          <ul class="includes">
+            <li><span class="tick">✓</span> Flights · business class upgrade available</li>
+            <li><span class="tick">✓</span> 3 Nights 5★ hotel with boardroom/conference</li>
+            <li><span class="tick">✓</span> KL city tour + team building activity</li>
+            <li><span class="tick">✓</span> Gala dinner at KL rooftop venue</li>
+            <li><span class="tick">✓</span> Corporate drone + group photoshoot</li>
+            <li><span class="tick">✓</span> All meals + branded trip itinerary booklets</li>
+          </ul>
+          <div class="aud-tags"><span class="at">Corporate</span><span class="at">Bank Staff</span><span class="at">Company Staff</span></div>
+          <button class="pkg-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Corporate Quote →</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ISLANDS -->
+<section class="islands-section" id="islands">
+  <div class="container">
+    <div class="eyebrow ey-sea">Paradise Islands</div>
+    <h2 class="sec-title">6 Breathtaking Islands <span style="color:var(--gold)">We Take You To</span></h2>
+    <p class="sec-sub">Add any island to your package or book as a standalone escape. Boat transfers, snorkelling gear &amp; meals all included.</p>
+    <div class="isl-grid">
+      <div class="isl reveal"><span class="isl-emoji">🏝️</span><div class="isl-badge">Best for Diving</div><div class="isl-name">Pulau Tioman</div><div class="isl-desc">Pristine jungle island, world-class coral reefs, waterfalls &amp; sea turtles. Truly untouched.</div><div class="isl-from">From ₹16,999 / person</div></div>
+      <div class="isl reveal"><span class="isl-emoji">🌊</span><div class="isl-badge">Best Snorkelling</div><div class="isl-name">Perhentian Islands</div><div class="isl-desc">Twin paradise islands with sea turtles, white sand &amp; vibrant coral — top-rated in all Asia.</div><div class="isl-from">From ₹18,999 / person</div></div>
+      <div class="isl reveal"><span class="isl-emoji">🐠</span><div class="isl-badge">Crystal Waters</div><div class="isl-name">Pulau Redang</div><div class="isl-desc">Giant clams, sea turtles &amp; rainbow coral. One of the world's most beautiful marine parks.</div><div class="isl-from">From ₹17,999 / person</div></div>
+      <div class="isl reveal"><span class="isl-emoji">🦋</span><div class="isl-badge">Hidden Gem</div><div class="isl-name">Pulau Kapas</div><div class="isl-desc">Quiet, unspoilt &amp; peaceful — perfect for couples &amp; solo travellers seeking true privacy.</div><div class="isl-from">From ₹12,999 / person</div></div>
+      <div class="isl reveal"><span class="isl-emoji">💎</span><div class="isl-badge">Most Exclusive</div><div class="isl-name">Lang Tengah</div><div class="isl-desc">Ultra-exclusive island with only 3 resorts. Dream destination for honeymooners seeking luxury.</div><div class="isl-from">From ₹22,999 / person</div></div>
+      <div class="isl reveal"><span class="isl-emoji">🦅</span><div class="isl-badge">Most Popular</div><div class="isl-name">Langkawi</div><div class="isl-desc">The legendary duty-free island — cable car, mangroves, stunning beaches &amp; world-class resorts.</div><div class="isl-from">From ₹14,999 / person</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ADD-ONS -->
+<section class="addons-section" id="addons">
+  <div class="container">
+    <div class="eyebrow ey-gold">Make It Extraordinary</div>
+    <h2 class="sec-title">Memorable <em style="font-style:italic;color:var(--teal)">Experiences to Add</em></h2>
+    <p class="sec-sub">Personalise your trip with these magical add-ons. Every experience is professionally organised, safe &amp; unforgettable. Just ask Subha when booking!</p>
+
+    <div class="cat-title">📸 Photography &amp; Shoots</div>
+    <div class="addons-grid">
+      <div class="adn photo reveal"><span class="adn-icon">🚁</span><div class="adn-name">Drone Aerial Shoot</div><div class="adn-desc">Breathtaking 4K aerial footage over islands, beaches &amp; KL skyline. 25+ edited photos + cinematic 60-second reel delivered within 24 hrs.</div><div class="adn-footer"><div><div class="adn-price">₹5,999</div><div class="adn-per">per session</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn photo reveal"><span class="adn-icon">💑</span><div class="adn-name">Couple Photoshoot</div><div class="adn-desc">Professional photographer at 2 dreamy locations — golden hour beach + city skyline. 80+ beautifully edited HD photos in 48 hrs.</div><div class="adn-footer"><div><div class="adn-price">₹6,999</div><div class="adn-per">per couple · 2 locations</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn photo reveal"><span class="adn-icon">👨‍👩‍👧‍👦</span><div class="adn-name">Family Portrait Shoot</div><div class="adn-desc">Relaxed, natural family session. Candid + posed styles. 100+ edited photos for the whole family (up to 6 members). Private scenic location.</div><div class="adn-footer"><div><div class="adn-price">₹7,499</div><div class="adn-per">per family · up to 6 pax</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn photo reveal"><span class="adn-icon">🤳</span><div class="adn-name">Group &amp; Team Shoot</div><div class="adn-desc">Professional group shoot at an iconic Malaysia landmark. Perfect for corporate trips, college groups &amp; big families. 120+ edited photos.</div><div class="adn-footer"><div><div class="adn-price">₹11,499</div><div class="adn-per">per group · up to 30 pax</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn photo reveal"><span class="adn-icon">🎬</span><div class="adn-name">Drone + Couple Cinematic Combo</div><div class="adn-desc">The ultimate memory — aerial drone footage AND a full couple shoot on the beach. 3-min cinematic video reel + 100 edited photos.</div><div class="adn-footer"><div><div class="adn-price">₹12,999</div><div class="adn-per">per couple · best value</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+    </div>
+
+    <div class="cat-title">💍 Honeymoon &amp; Romance</div>
+    <div class="addons-grid">
+      <div class="adn honey reveal"><span class="adn-icon">🌹</span><div class="adn-name">Luxury Room Decoration</div><div class="adn-desc">Rose petals, balloon arch, fairy lights, personalised message board, chocolates &amp; welcome hamper. Set up secretly before you arrive.</div><div class="adn-footer"><div><div class="adn-price">₹4,999</div><div class="adn-per">one-time setup</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn honey reveal"><span class="adn-icon">🍾</span><div class="adn-name">Private Beach Dinner</div><div class="adn-desc">Exclusive candlelit dinner on the beach under the stars — live acoustic music, 4-course meal, mocktails &amp; a personalised menu card.</div><div class="adn-footer"><div><div class="adn-price">₹9,999</div><div class="adn-per">per couple</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn honey reveal"><span class="adn-icon">💆</span><div class="adn-name">Couples Spa &amp; Massage</div><div class="adn-desc">90-minute couples treatment at a certified resort spa — traditional Malay massage, aromatherapy &amp; hot stone therapy. Pure bliss.</div><div class="adn-footer"><div><div class="adn-price">₹6,499</div><div class="adn-per">per couple · 90 mins</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn honey reveal"><span class="adn-icon">🛥️</span><div class="adn-name">Private Sunset Cruise</div><div class="adn-desc">2-hour private boat charter at golden hour — just the two of you, mocktails, snacks, soft music &amp; the open sea. Absolutely unforgettable.</div><div class="adn-footer"><div><div class="adn-price">₹9,999</div><div class="adn-per">per couple · 2 hours</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+    </div>
+
+    <div class="cat-title">🌊 Water Adventures</div>
+    <div class="addons-grid">
+      <div class="adn water reveal"><span class="adn-icon">🤿</span><div class="adn-name">Snorkelling Trip</div><div class="adn-desc">Guided at 3 prime spots — coral gardens, sea turtle zone &amp; reef fish area. Full gear &amp; safety briefing included.</div><div class="adn-footer"><div><div class="adn-price">₹2,999</div><div class="adn-per">per person · 3 spots</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn water reveal"><span class="adn-icon">🪂</span><div class="adn-name">Parasailing</div><div class="adn-desc">Soar 150 feet above the sparkling sea — bird's-eye views of the island. 10-min flight. Tandem or solo options.</div><div class="adn-footer"><div><div class="adn-price">₹3,499</div><div class="adn-per">per person</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn water reveal"><span class="adn-icon">🚤</span><div class="adn-name">Jet Ski Ride</div><div class="adn-desc">30-minute adrenaline-pumping jet ski session along the coast. Optional guided route around a nearby islet. All safety gear provided.</div><div class="adn-footer"><div><div class="adn-price">₹3,999</div><div class="adn-per">per person · 30 mins</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn water reveal"><span class="adn-icon">🏄</span><div class="adn-name">Banana Boat Ride</div><div class="adn-desc">Group fun on the waves! Up to 6 riders. Perfect for families, friends &amp; corporate teams. Pure laughter guaranteed.</div><div class="adn-footer"><div><div class="adn-price">₹1,499</div><div class="adn-per">per person · 20 mins</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn water reveal"><span class="adn-icon">🐢</span><div class="adn-name">Sea Turtle Encounter</div><div class="adn-desc">Early morning guided snorkelling with sea turtles in their natural habitat. Marine expert guide. May–October only. Utterly magical.</div><div class="adn-footer"><div><div class="adn-price">₹4,499</div><div class="adn-per">per person</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn water reveal"><span class="adn-icon">🌊</span><div class="adn-name">Scuba Diving (Intro)</div><div class="adn-desc">Your first ever dive! 30-min theory + 45-min guided underwater dive at a PADI-certified centre. No experience needed.</div><div class="adn-footer"><div><div class="adn-price">₹7,499</div><div class="adn-per">per person</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+      <div class="adn water reveal"><span class="adn-icon">🚣</span><div class="adn-name">Mangrove Kayaking</div><div class="adn-desc">Guided 2-hr kayak through Langkawi's magical mangrove forest. Spot eagles, monitor lizards &amp; fireflies. Beginner-friendly.</div><div class="adn-footer"><div><div class="adn-price">₹3,099</div><div class="adn-per">per person · 2 hrs</div></div><button class="adn-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Add to Trip</button></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-section" id="reviews">
+  <div class="container">
+    <div class="eyebrow ey-teal">Happy Travellers</div>
+    <h2 class="sec-title">What Our <em style="font-style:italic;color:var(--teal)">Guests Say</em></h2>
+    <p class="sec-sub">Real stories from real Indian families, couples &amp; groups who travelled with Soulmate Travels.</p>
+    <div class="testi-grid">
+      <div class="testi reveal"><div class="testi-stars">★★★★★</div><div class="testi-quote">"Our honeymoon in Langkawi was absolutely magical. The rose petal decoration, the beach dinner, the couple shoot — every detail was perfect. Subha aunty planned everything so beautifully!"</div><div class="testi-author"><div class="tav" style="background:#FCE7F3">💑</div><div><div class="tname">Priya &amp; Karthik</div><div class="tdetail">Honeymoon Package · Chennai</div></div></div></div>
+      <div class="testi reveal"><div class="testi-stars">★★★★★</div><div class="testi-quote">"Took our entire family of 8 — grandparents to little kids. The Indian food, Hindi guide, everything was perfect. The kids are still talking about Tioman island three months later!"</div><div class="testi-author"><div class="tav" style="background:#DCFCE7">👨‍👩‍👧‍👦</div><div><div class="tname">Ramesh Family</div><div class="tdetail">7 Day Family Package · Bengaluru</div></div></div></div>
+      <div class="testi reveal"><div class="testi-stars">★★★★★</div><div class="testi-quote">"Corporate trip for 35 bank employees — flawlessly executed. The 5-star hotel, gala dinner, drone shoot with our company logo. Our team is still buzzing about it!"</div><div class="testi-author"><div class="tav" style="background:#DBEAFE">🏦</div><div><div class="tname">Vijayalakshmi S.</div><div class="tdetail">Corporate Incentive Tour · Mumbai</div></div></div></div>
+      <div class="testi reveal"><div class="testi-stars">★★★★★</div><div class="testi-quote">"50 students, smoothest trip ever! The food was great, the hotels clean, Genting Highlands was a massive hit. Incredibly affordable and well-organised. Thank you Soulmate Travels!"</div><div class="testi-author"><div class="tav" style="background:#F0FDF4">🎓</div><div><div class="tname">Prof. Suresh Kumar</div><div class="tdetail">Student Group Tour · Coimbatore</div></div></div></div>
+      <div class="testi reveal"><div class="testi-stars">★★★★★</div><div class="testi-quote">"The snorkelling at Perhentian was the most beautiful thing I've ever seen. Sea turtles right beside me! The package was exactly as promised — not one single disappointment."</div><div class="testi-author"><div class="tav" style="background:#F0F9FF">🤿</div><div><div class="tname">Aravind N.</div><div class="tdetail">10 Day Grand Explorer · Hyderabad</div></div></div></div>
+      <div class="testi reveal"><div class="testi-stars">★★★★★</div><div class="testi-quote">"12 friends, best trip of our lives! The drone video over Langkawi is something we'll show our grandchildren. Worth every rupee. Already planning our next trip with Subha!"</div><div class="testi-author"><div class="tav" style="background:#FFF7ED">👥</div><div><div class="tname">The Chennai Squad</div><div class="tdetail">7 Day Group Package · Chennai</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-section" id="why">
+  <div class="container">
+    <div class="eyebrow ey-light">Why Soulmate Travels</div>
+    <h2 class="sec-title" style="color:#fff;margin-bottom:.5rem">We're Built <em style="font-style:italic;color:#5EEAD4">For Indian Travellers</em></h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.42)">Subha and her team understand what Indian families, couples &amp; groups truly need — because we've served thousands of them with love.</p>
+    <div class="why-grid">
+      <div class="why-card reveal"><span class="why-icon">🍛</span><div class="why-title">Indian-Friendly Food</div><div class="why-desc">Pure veg, Jain &amp; halal options at every destination. No compromise on taste or preference, ever.</div></div>
+      <div class="why-card reveal"><span class="why-icon">🗣️</span><div class="why-title">Hindi &amp; Tamil Support</div><div class="why-desc">Indian-speaking guides + 24/7 WhatsApp support in Hindi, Tamil &amp; other regional languages.</div></div>
+      <div class="why-card reveal"><span class="why-icon">💳</span><div class="why-title">Pay in INR</div><div class="why-desc">All bookings in Indian Rupees. UPI, NEFT, bank transfer &amp; EMI available. Zero hidden costs.</div></div>
+      <div class="why-card reveal"><span class="why-icon">📋</span><div class="why-title">Free Visa Assistance</div><div class="why-desc">Complete Malaysia eVisa guidance, document checklist &amp; application support — free with every booking.</div></div>
+      <div class="why-card reveal"><span class="why-icon">📸</span><div class="why-title">Photography Experts</div><div class="why-desc">Drone, couple, family &amp; group shoots by skilled photographers. Cinematic quality memories forever.</div></div>
+      <div class="why-card reveal"><span class="why-icon">🔒</span><div class="why-title">100% Safe &amp; Insured</div><div class="why-desc">Licensed, insured &amp; trusted by 5,000+ Indian travellers. Every partner operator is verified.</div></div>
+      <div class="why-card reveal"><span class="why-icon">⚡</span><div class="why-title">2-Hour Quotes</div><div class="why-desc">Send us your details and receive a full custom quote within 2 hours. Fast, transparent, no pressure.</div></div>
+      <div class="why-card reveal"><span class="why-icon">🏆</span><div class="why-title">Best Price Guarantee</div><div class="why-desc">Found a lower price for the same package? We'll beat it by ₹1,000. That's our promise.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-left">
+        <div class="eyebrow ey-gold" style="margin-bottom:1rem">Talk to Subha</div>
+        <h3>Let's Plan Your<br/><em>Dream Malaysia Trip</em></h3>
+        <p class="contact-by">— Subha &amp; Smruti, Soulmate Travels —</p>
+        <p>Tell us when you want to travel, how many of you are going, and what excites you most. We'll create a personalised itinerary with full pricing in INR within 2 hours — completely free, no obligation.</p>
+        <div class="clist">
+          <div class="citem">
+            <div class="citem-icon">📱</div>
+            <div class="citem-text">WhatsApp: <a href="https://wa.me/601123580569?text=Hi%20Subha!%20I%20want%20to%20enquire%20about%20a%20Malaysia%20holiday%20%F0%9F%8C%B4" target="_blank">+60 11-2358 0569</a></div>
+          </div>
+          <div class="citem">
+            <div class="citem-icon">📧</div>
+            <div class="citem-text"><a href="mailto:subha.lipi@hotmail.com">subha.lipi@hotmail.com</a></div>
+          </div>
+          <div class="citem">
+            <div class="citem-icon">📍</div>
+            <div class="citem-text">India Office + Malaysia Ground Team</div>
+          </div>
+          <div class="citem">
+            <div class="citem-icon">⏰</div>
+            <div class="citem-text">Open 7 Days · 8 AM – 11 PM IST</div>
+          </div>
+        </div>
+        <div class="social-row">
+          <span class="social-label">Follow us</span>
+          <a class="social-btn" href="https://www.instagram.com/soulmate_lipsmru/" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#E1306C" stroke="none"/></svg>
+            <span>@soulmate_lipsmru</span>
+          </a>
+        </div>
+      </div>
+      <div class="cform">
+        <div class="frow">
+          <div class="fg"><label>Your Name *</label><input type="text" placeholder="Full name"/></div>
+          <div class="fg"><label>WhatsApp Number *</label><input type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"/></div>
+        <div class="frow">
+          <div class="fg"><label>I Am Travelling As *</label><select><option value="">Select...</option><option>Solo Traveller</option><option>Couple / Honeymoon</option><option>Family</option><option>Group of Friends</option><option>Corporate / Bank Staff</option><option>School / Student Group</option><option>University Tour</option><option>Large Group (50+)</option></select></div>
+          <div class="fg"><label>Number of Travellers *</label><select><option>1–2 people</option><option>3–5 people</option><option>6–10 people</option><option>11–20 people</option><option>20–50 people</option><option>50+ people</option></select></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Package Duration</label><select><option>3 Days / 2 Nights</option><option>5 Days / 4 Nights</option><option>7 Days / 6 Nights</option><option>10 Days / 9 Nights</option><option>12 Days / 11 Nights</option><option>Not Sure Yet</option></select></div>
+          <div class="fg"><label>Travel Month</label><select><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select></div>
+        </div>
+        <div class="fg"><label>Tell Us What You Dream Of 🌴</label><textarea placeholder="Eg. Honeymoon with beach dinner + drone shoot... Family trip with island snorkelling... Corporate team of 20... School group..."></textarea></div>
+        <button class="fsubmit">🌴 Get My Free Custom Itinerary from Subha</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="ftop">
+      <div>
+        <div class="fbrand">
+          <div class="fbrand-logo"><svg viewBox="0 0 24 24"><path d="M12 21C12 21 4 13.5 4 8.5a8 8 0 0 1 16 0C20 13.5 12 21 12 21z"/><path d="M9 9c0 1.66 1.34 3 3 3s3-1.34 3-3-1.34-3-3-3-3 1.34-3 3z"/><path d="M8 17c-1.5.8-2.5 1.6-2.5 2.5C5.5 20.3 8.5 21 12 21s6.5-.7 6.5-1.5c0-.9-1-1.7-2.5-2.5"/></svg></div>
+          <div><div class="fbrand-name">Soulmate <span>Travels</span></div><div class="fbrand-sub">Malaysia Holiday Specialists</div></div>
+        </div>
+        <p class="fbrand-desc">Founded by Subha &amp; Smruti with love — crafting unforgettable Malaysia holidays for Indian families, couples, groups &amp; corporate teams. Your soulmate trip starts here.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/soulmate_lipsmru/" target="_blank" title="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="#fff" stroke="none"/></svg>
+          </a>
+          <a href="https://wa.me/601123580569" target="_blank" title="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+          </a>
+          <a href="mailto:subha.lipi@hotmail.com" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="fcol-title">Packages</div>
+        <ul class="flinks">
+          <li><a href="#packages">3D KL Flash Trip</a></li>
+          <li><a href="#packages">5D Malaysia Classic</a></li>
+          <li><a href="#packages">7D Complete Explorer</a></li>
+          <li><a href="#packages">7D Tioman Dream</a></li>
+          <li><a href="#packages">10D Grand Explorer</a></li>
+          <li><a href="#packages">12D Ultimate</a></li>
+          <li><a href="#packages">💍 Honeymoon Special</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fcol-title">Islands</div>
+        <ul class="flinks">
+          <li><a href="#islands">Pulau Tioman</a></li>
+          <li><a href="#islands">Perhentian Islands</a></li>
+          <li><a href="#islands">Pulau Redang</a></li>
+          <li><a href="#islands">Pulau Kapas</a></li>
+          <li><a href="#islands">Lang Tengah</a></li>
+          <li><a href="#islands">Langkawi</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="fcol-title">Experiences</div>
+        <ul class="flinks">
+          <li><a href="#addons">Drone Shoot</a></li>
+          <li><a href="#addons">Couple Photoshoot</a></li>
+          <li><a href="#addons">Snorkelling Trip</a></li>
+          <li><a href="#addons">Scuba Diving</a></li>
+          <li><a href="#addons">Beach Dinner</a></li>
+          <li><a href="#addons">Sunset Cruise</a></li>
+          <li><a href="#addons">Couples Spa</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbottom">
+      <div class="fcopy">© 2025 Soulmate Travels · Founded by <a href="mailto:subha.lipi@hotmail.com">Subha &amp; Smruti</a> · All prices in INR · Subject to availability &amp; season</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/601123580569?text=Hi%20Subha!%20I%20want%20to%20enquire%20about%20a%20Malaysia%20holiday%20%F0%9F%8C%B4" target="_blank">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+  Chat with Subha
+</a>
+
+<script>
+const io = new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.pf-btn').forEach(btn=>{btn.addEventListener('click',function(){document.querySelectorAll('.pf-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')})});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}})});
+</script>
+</body>
+</html>
